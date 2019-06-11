@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Setting up Scala IDE on OS X Mojave - Mac | Fedora Consulting LLC</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Setting up Scala IDE on OS X Mojave - Mac" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Bringing It Into Here and Now" />
+<meta property="og:description" content="Bringing It Into Here and Now" />
+<link rel="canonical" href="http://localhost:4000/mac/scala/apache-spark/development/2019/06/11/scala-on-mac.html" />
+<meta property="og:url" content="http://localhost:4000/mac/scala/apache-spark/development/2019/06/11/scala-on-mac.html" />
+<meta property="og:site_name" content="Fedora Consulting LLC" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-11T14:24:44-04:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mac/scala/apache-spark/development/2019/06/11/scala-on-mac.html"},"url":"http://localhost:4000/mac/scala/apache-spark/development/2019/06/11/scala-on-mac.html","description":"Bringing It Into Here and Now","headline":"Setting up Scala IDE on OS X Mojave - Mac","dateModified":"2019-06-11T14:24:44-04:00","datePublished":"2019-06-11T14:24:44-04:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Fedora Consulting LLC" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Fedora Consulting LLC</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Setting up Scala IDE on OS X Mojave - Mac</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-06-11T14:24:44-04:00" itemprop="datePublished">Jun 11, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="bringing-it-into-here-and-now">Bringing It Into Here and Now</h1>
+
+<p>I love simple, easy to understand instructions.  Few things give greater pleasure than just following some instructions, and then start to see the thing you made just <em>work</em>.</p>
+
+<p>But - technology changes.  If it didn’t, those of us in IT wouldn’t have jobs.  So when I started learning how to do Apache Spark development, I followed the instructions at <a href="https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/">https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/</a> to get Apache Spark up and running on my Mojave based Mac.</p>
+
+<p>But then it came to installing the Scala-IDE from <a href="http://scala-ide.org">http://scala-ide.org</a>, and - I get this:</p>
+
+<p><img src="/images/EclipseErrorSad.png" alt="Eclipse Scale on OS X Mojave Error" /></p>
+
+<p>Well.  That is not happiness.  It took some time, but I figured out how to fix the error on Scala for Eclipse - and how to properly set up the Scala plugin on modern Eclispe (well, modern as of 2019 June 11th, anyway).</p>
+
+<h2 id="install-java-jdk-8">Install Java JDK 8</h2>
+
+<ol>
+  <li>ScalaIDE requires Java JDK 8.  Right now, the rest of the world is running in Java JDK 12.  So we’ll have to install that.</li>
+  <li>
+    <p>Easiest way to is through brew.  There’s an OpenJDK available at <a href="https://github.com/AdoptOpenJDK/homebrew-openjdk">https://github.com/AdoptOpenJDK/homebrew-openjdk</a>.  Install it with:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> brew tap AdoptOpenJDK/openjdk
+ brew cask <span class="nb">install </span>adoptopenjdk8
+</code></pre></div>    </div>
+
+    <ol>
+      <li>Note: You might see the error:
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Error: Cask adoptopenjdk8 exists <span class="k">in </span>multiple taps:
+</code></pre></div>        </div>
+        <p>If you do, use the following commands instead:</p>
+      </li>
+    </ol>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> brew tap AdoptOpenJDK/openjdk
+ brew cask <span class="nb">install </span>adoptopenjdk/openjdk/adoptopenjdk8
+</code></pre></div>    </div>
+  </li>
+  <li>You’ll be prompted for an Administrator password.  Enter it when prompted.</li>
+  <li>
+    <p>You can verify the installation worked with the command <code class="highlighter-rouge">/usr/libexec/java_home -V</code>.  This installs all of the Java versions on your system.  You should see something like:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Matching Java Virtual Machines <span class="o">(</span>2<span class="o">)</span>:
+ 11.0.2, x86_64:	<span class="s2">"Java SE 11.0.2"</span>	/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
+ 1.8.0_212, x86_64:	<span class="s2">"AdoptOpenJDK 8"</span>	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="installing-and-fixing-scala-ide-eclipse">Installing and Fixing Scala-IDE Eclipse</h2>
+
+<p>By Scala-IDE Eclipse, we’re talking about the one from <a href="http://scala-ide.org">http://scala-ide.org</a>.  If you install it the usual Mac way (open the DMG file and copy the application to the /Applications folder), you’re going to get the error you see above.</p>
+
+<p>Here’s the proper steps:</p>
+
+<ol>
+  <li>Download ScalaIDE from <a href="http://scala-ide.org">http://scala-ide.org</a> for Mac.  As of this article, version 4.7.0 is available.  It’ll download as a .zip file containing the Eclipse application.</li>
+  <li>Open the zip file, then move application where you like (For example - Applications).
+    <ol>
+      <li><em>Recommendation:</em> Rename this from Eclipse to something like Eclipse-Scala.</li>
+    </ol>
+  </li>
+  <li>Open the ScalaIDE contents.  The easiest way is to right click on the file, and select “Show Package Contents.”</li>
+  <li>From within the ScalaIDE, enter the subdirectory Content-&gt;Eclipse, and open the file eclipse.ini.
+<img src="/images/openscalaide.gif" alt="Open ScalaIDE Contents" /></li>
+  <li>
+    <p>Add the following lines before the line <code class="highlighter-rouge">-vmargs</code>:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">-vm</span>
+ /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin/java
+</code></pre></div>    </div>
+  </li>
+  <li>Run your new ScalaIDE, and you should have the success in life you have been looking for:
+ <img src="/images/ScalaIDELives.png" alt="Scala IDE Lives! It Lives!" /></li>
+</ol>
+
+<h3 id="ok---so-what-did-we-do">OK - So What Did We Do?</h3>
+
+<p>Unlike recipe blog sites, I prefer to put the instructions first, and then the explanation later - including the stories about how I learned this recipe from my beloved grandfather.</p>
+
+<p>Sorry.  Got distracted.  The problem is by default, OS X Mojave has Java 11 installed.  But the version of Eclipse working with Scala IDE needs JDK 8 to run.  The easiest way to fix that is to install JDK 8, then specify the Java Virtual Machine by adding it to the eclipse.ini file.</p>
+
+<p>We’re not out of the woods yet.  Even though ScalaIDE is running, we still need to make sure it knows how to talk to the right Java JDK.  Skip down to Configuring JDK in Eclipse to finish this up.</p>
+
+<h2 id="configuring-eclipse-jdk-for-scala">Configuring Eclipse JDK for Scala</h2>
+
+<p>All right.  So far, so good.  We have either Really Old or Really New Eclipse on our systems with the Scala plugins installed.  Here’s the last thing to do:  Configure our Java JDK for Eclipse.</p>
+
+<p>Remember alllll the way back to the start of these instructions we installed Java JDK 8?  I hope you remember, because this is not a long document but I did work on it to make it look all nice and useful.  (You’re welcome, by the way.)</p>
+
+<p>Last thing to do - tell Eclipse what JDK to use.</p>
+
+<ol>
+  <li>From the command line, run:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/libexec/java_home <span class="nt">-V</span>
+</code></pre></div>    </div>
+    <p>You’ll get a result like the following:</p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Matching Java Virtual Machines <span class="o">(</span>2<span class="o">)</span>:
+11.0.2, x86_64:	<span class="s2">"Java SE 11.0.2"</span>	/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
+1.8.0_212, x86_64:	<span class="s2">"AdoptOpenJDK 8"</span>	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+</code></pre></div>    </div>
+  </li>
+  <li>Copy the path for AdoptOpenJDK 8.  You’ll need it in a moment.</li>
+  <li>From within Eclipse, select <code class="highlighter-rouge">Eclipse-&gt;Preferences</code>.</li>
+  <li>From within the settings, select <code class="highlighter-rouge">Java -&gt; Installed JREs</code>.  Odds are, you’ll see just one - the default Java SE (Mojave’s default is Java SE 11).
+    <ol>
+      <li>Select “Add”, then set the JRE Type to <code class="highlighter-rouge">Standard VM</code>.  Select Next.</li>
+      <li>Set the JRE Home to the directory for our JDK 8, then give it a name (JDK 1.8 is a good idea).</li>
+      <li>Select Finish.</li>
+    </ol>
+  </li>
+  <li><em>Optional</em>:  If you only want to use this JDK for all projects, set it as the default in the JRE list.  Otherwise we can set it up manually.</li>
+</ol>
+
+<h2 id="set-up-scala-project">Set up Scala Project</h2>
+
+<p>Last thing to do:  Set up a Scala project.  Just because we have the right JDK doesn’t mean we’re done.  Let’s create a sample project so we know what to do:</p>
+
+<ol>
+  <li>Select <code class="highlighter-rouge">File-&gt;New-&gt;Project</code>, then select from <code class="highlighter-rouge">Scala Wizard -&gt; Scala Project</code>.</li>
+  <li>
+    <p>Give it a name, and make sure you select the Java JDK 1.8.  Save it.  If requested, let it open the Scala perspective.</p>
+
+    <p><img src="/images/selectjdkoneeight.png" alt="Select JDK 1.8" /></p>
+  </li>
+  <li>Now, let’s set up our external JAR files for the project.  Select from the menu <code class="highlighter-rouge">Project-&gt;Properties</code>.</li>
+  <li>Select <code class="highlighter-rouge">Java Build Path</code>, then <code class="highlighter-rouge">Libraries</code>, then <code class="highlighter-rouge">Add External Jars</code>.  Odds are, you’ll need the Apache Spark JAR files.  If you followed the instructions from <a href="https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/">https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/</a> and installed via Homebrew, you’ll find the jar files you need at <code class="highlighter-rouge">/usr/local/Cellar/apache-spark/2.4.3/libexec/jars</code> (or whatever version you’re using), then select Apply.</li>
+  <li>Select the JAR files you need - which is probably going to be all of them, then select OK.
+<img src="/images/scalajars.png" alt="Spark jar files." /></li>
+  <li>There’s a good chance that the jar files that were selected aren’t going to be compatible with the actual version of the scala plugin - if you start getting errors that the jar files is cross-compiled with an incompatible version of Scala, go back into <code class="highlighter-rouge">Project-&gt;Properties</code>, then select <code class="highlighter-rouge">Scala Compiler</code>.</li>
+  <li>Select <code class="highlighter-rouge">Use Project Settings</code>, then set the correct version (odds are this will be 2.11).</li>
+</ol>
+
+<p>That should be it!  Start up a sample program, and you should be golden.</p>
+
+  </div><a class="u-url" href="/mac/scala/apache-spark/development/2019/06/11/scala-on-mac.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Fedora Consulting LLC</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Fedora Consulting LLC</li><li><a class="u-email" href="mailto:jhummel@fedoraconsulting.net">jhummel@fedoraconsulting.net</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/fedoraconsulting"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">fedoraconsulting</span></a></li><li><a href="https://www.twitter.com/fedoraconsulti1"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">fedoraconsulti1</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>The portfolios and works of the team at Fedora Consulting, a technical writing company.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,13 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-30T16:34:03-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Fedora Consulting LLC</title><subtitle>The portfolios and works of the team at Fedora Consulting, a technical writing company.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/05/30/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-05-30T16:24:44-04:00</published><updated>2019-05-30T16:24:44-04:00</updated><id>http://localhost:4000/jekyll/update/2019/05/30/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/05/30/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-11T18:42:35-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Fedora Consulting LLC</title><subtitle>The portfolios and works of the team at Fedora Consulting, a technical writing company.</subtitle><entry><title type="html">Setting up Scala IDE on OS X Mojave - Mac</title><link href="http://localhost:4000/mac/scala/apache-spark/development/2019/06/11/scala-on-mac.html" rel="alternate" type="text/html" title="Setting up Scala IDE on OS X Mojave - Mac" /><published>2019-06-11T14:24:44-04:00</published><updated>2019-06-11T14:24:44-04:00</updated><id>http://localhost:4000/mac/scala/apache-spark/development/2019/06/11/scala-on-mac</id><content type="html" xml:base="http://localhost:4000/mac/scala/apache-spark/development/2019/06/11/scala-on-mac.html">&lt;h1 id=&quot;bringing-it-into-here-and-now&quot;&gt;Bringing It Into Here and Now&lt;/h1&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;I love simple, easy to understand instructions.  Few things give greater pleasure than just following some instructions, and then start to see the thing you made just &lt;em&gt;work&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;But - technology changes.  If it didn’t, those of us in IT wouldn’t have jobs.  So when I started learning how to do Apache Spark development, I followed the instructions at &lt;a href=&quot;https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/&quot;&gt;https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/&lt;/a&gt; to get Apache Spark up and running on my Mojave based Mac.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;But then it came to installing the Scala-IDE from &lt;a href=&quot;http://scala-ide.org&quot;&gt;http://scala-ide.org&lt;/a&gt;, and - I get this:&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/images/EclipseErrorSad.png&quot; alt=&quot;Eclipse Scale on OS X Mojave Error&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Well.  That is not happiness.  It took some time, but I figured out how to fix the error on Scala for Eclipse - and how to properly set up the Scala plugin on modern Eclispe (well, modern as of 2019 June 11th, anyway).&lt;/p&gt;
+
+&lt;h2 id=&quot;install-java-jdk-8&quot;&gt;Install Java JDK 8&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ScalaIDE requires Java JDK 8.  Right now, the rest of the world is running in Java JDK 12.  So we’ll have to install that.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Easiest way to is through brew.  There’s an OpenJDK available at &lt;a href=&quot;https://github.com/AdoptOpenJDK/homebrew-openjdk&quot;&gt;https://github.com/AdoptOpenJDK/homebrew-openjdk&lt;/a&gt;.  Install it with:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; brew tap AdoptOpenJDK/openjdk
+ brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;adoptopenjdk8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;Note: You might see the error:
+        &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Error: Cask adoptopenjdk8 exists &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;multiple taps:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+        &lt;p&gt;If you do, use the following commands instead:&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; brew tap AdoptOpenJDK/openjdk
+ brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;adoptopenjdk/openjdk/adoptopenjdk8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;You’ll be prompted for an Administrator password.  Enter it when prompted.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can verify the installation worked with the command &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/libexec/java_home -V&lt;/code&gt;.  This installs all of the Java versions on your system.  You should see something like:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Matching Java Virtual Machines &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+ 11.0.2, x86_64:	&lt;span class=&quot;s2&quot;&gt;&quot;Java SE 11.0.2&quot;&lt;/span&gt;	/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
+ 1.8.0_212, x86_64:	&lt;span class=&quot;s2&quot;&gt;&quot;AdoptOpenJDK 8&quot;&lt;/span&gt;	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;installing-and-fixing-scala-ide-eclipse&quot;&gt;Installing and Fixing Scala-IDE Eclipse&lt;/h2&gt;
+
+&lt;p&gt;By Scala-IDE Eclipse, we’re talking about the one from &lt;a href=&quot;http://scala-ide.org&quot;&gt;http://scala-ide.org&lt;/a&gt;.  If you install it the usual Mac way (open the DMG file and copy the application to the /Applications folder), you’re going to get the error you see above.&lt;/p&gt;
+
+&lt;p&gt;Here’s the proper steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download ScalaIDE from &lt;a href=&quot;http://scala-ide.org&quot;&gt;http://scala-ide.org&lt;/a&gt; for Mac.  As of this article, version 4.7.0 is available.  It’ll download as a .zip file containing the Eclipse application.&lt;/li&gt;
+  &lt;li&gt;Open the zip file, then move application where you like (For example - Applications).
+    &lt;ol&gt;
+      &lt;li&gt;&lt;em&gt;Recommendation:&lt;/em&gt; Rename this from Eclipse to something like Eclipse-Scala.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Open the ScalaIDE contents.  The easiest way is to right click on the file, and select “Show Package Contents.”&lt;/li&gt;
+  &lt;li&gt;From within the ScalaIDE, enter the subdirectory Content-&amp;gt;Eclipse, and open the file eclipse.ini.
+&lt;img src=&quot;/images/openscalaide.gif&quot; alt=&quot;Open ScalaIDE Contents&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the following lines before the line &lt;code class=&quot;highlighter-rouge&quot;&gt;-vmargs&lt;/code&gt;:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;-vm&lt;/span&gt;
+ /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin/java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run your new ScalaIDE, and you should have the success in life you have been looking for:
+ &lt;img src=&quot;/images/ScalaIDELives.png&quot; alt=&quot;Scala IDE Lives! It Lives!&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ok---so-what-did-we-do&quot;&gt;OK - So What Did We Do?&lt;/h3&gt;
+
+&lt;p&gt;Unlike recipe blog sites, I prefer to put the instructions first, and then the explanation later - including the stories about how I learned this recipe from my beloved grandfather.&lt;/p&gt;
+
+&lt;p&gt;Sorry.  Got distracted.  The problem is by default, OS X Mojave has Java 11 installed.  But the version of Eclipse working with Scala IDE needs JDK 8 to run.  The easiest way to fix that is to install JDK 8, then specify the Java Virtual Machine by adding it to the eclipse.ini file.&lt;/p&gt;
+
+&lt;p&gt;We’re not out of the woods yet.  Even though ScalaIDE is running, we still need to make sure it knows how to talk to the right Java JDK.  Skip down to Configuring JDK in Eclipse to finish this up.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-eclipse-jdk-for-scala&quot;&gt;Configuring Eclipse JDK for Scala&lt;/h2&gt;
+
+&lt;p&gt;All right.  So far, so good.  We have either Really Old or Really New Eclipse on our systems with the Scala plugins installed.  Here’s the last thing to do:  Configure our Java JDK for Eclipse.&lt;/p&gt;
+
+&lt;p&gt;Remember alllll the way back to the start of these instructions we installed Java JDK 8?  I hope you remember, because this is not a long document but I did work on it to make it look all nice and useful.  (You’re welcome, by the way.)&lt;/p&gt;
+
+&lt;p&gt;Last thing to do - tell Eclipse what JDK to use.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;From the command line, run:
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/libexec/java_home &lt;span class=&quot;nt&quot;&gt;-V&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;You’ll get a result like the following:&lt;/p&gt;
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Matching Java Virtual Machines &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+11.0.2, x86_64:	&lt;span class=&quot;s2&quot;&gt;&quot;Java SE 11.0.2&quot;&lt;/span&gt;	/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home
+1.8.0_212, x86_64:	&lt;span class=&quot;s2&quot;&gt;&quot;AdoptOpenJDK 8&quot;&lt;/span&gt;	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Copy the path for AdoptOpenJDK 8.  You’ll need it in a moment.&lt;/li&gt;
+  &lt;li&gt;From within Eclipse, select &lt;code class=&quot;highlighter-rouge&quot;&gt;Eclipse-&amp;gt;Preferences&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;From within the settings, select &lt;code class=&quot;highlighter-rouge&quot;&gt;Java -&amp;gt; Installed JREs&lt;/code&gt;.  Odds are, you’ll see just one - the default Java SE (Mojave’s default is Java SE 11).
+    &lt;ol&gt;
+      &lt;li&gt;Select “Add”, then set the JRE Type to &lt;code class=&quot;highlighter-rouge&quot;&gt;Standard VM&lt;/code&gt;.  Select Next.&lt;/li&gt;
+      &lt;li&gt;Set the JRE Home to the directory for our JDK 8, then give it a name (JDK 1.8 is a good idea).&lt;/li&gt;
+      &lt;li&gt;Select Finish.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;:  If you only want to use this JDK for all projects, set it as the default in the JRE list.  Otherwise we can set it up manually.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;set-up-scala-project&quot;&gt;Set up Scala Project&lt;/h2&gt;
+
+&lt;p&gt;Last thing to do:  Set up a Scala project.  Just because we have the right JDK doesn’t mean we’re done.  Let’s create a sample project so we know what to do:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Select &lt;code class=&quot;highlighter-rouge&quot;&gt;File-&amp;gt;New-&amp;gt;Project&lt;/code&gt;, then select from &lt;code class=&quot;highlighter-rouge&quot;&gt;Scala Wizard -&amp;gt; Scala Project&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Give it a name, and make sure you select the Java JDK 1.8.  Save it.  If requested, let it open the Scala perspective.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/selectjdkoneeight.png&quot; alt=&quot;Select JDK 1.8&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now, let’s set up our external JAR files for the project.  Select from the menu &lt;code class=&quot;highlighter-rouge&quot;&gt;Project-&amp;gt;Properties&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Select &lt;code class=&quot;highlighter-rouge&quot;&gt;Java Build Path&lt;/code&gt;, then &lt;code class=&quot;highlighter-rouge&quot;&gt;Libraries&lt;/code&gt;, then &lt;code class=&quot;highlighter-rouge&quot;&gt;Add External Jars&lt;/code&gt;.  Odds are, you’ll need the Apache Spark JAR files.  If you followed the instructions from &lt;a href=&quot;https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/&quot;&gt;https://oleweidner.com/blog/2015/getting-started-with-spark-on-osx/&lt;/a&gt; and installed via Homebrew, you’ll find the jar files you need at &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/Cellar/apache-spark/2.4.3/libexec/jars&lt;/code&gt; (or whatever version you’re using), then select Apply.&lt;/li&gt;
+  &lt;li&gt;Select the JAR files you need - which is probably going to be all of them, then select OK.
+&lt;img src=&quot;/images/scalajars.png&quot; alt=&quot;Spark jar files.&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;There’s a good chance that the jar files that were selected aren’t going to be compatible with the actual version of the scala plugin - if you start getting errors that the jar files is cross-compiled with an incompatible version of Scala, go back into &lt;code class=&quot;highlighter-rouge&quot;&gt;Project-&amp;gt;Properties&lt;/code&gt;, then select &lt;code class=&quot;highlighter-rouge&quot;&gt;Scala Compiler&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Select &lt;code class=&quot;highlighter-rouge&quot;&gt;Use Project Settings&lt;/code&gt;, then set the correct version (odds are this will be 2.11).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That should be it!  Start up a sample program, and you should be golden.&lt;/p&gt;</content><author><name></name></author><summary type="html">Bringing It Into Here and Now</summary></entry></feed>
